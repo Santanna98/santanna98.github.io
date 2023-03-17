@@ -26,7 +26,6 @@ p {
   max-width: 1200px; /* Define um tamanho exato do meu menu */
   padding: 40px 20px;
   margin: 0 auto; /* Faz o browser calcular um tamanho automático dos lados, centralizando o conteudo */
-  margin-bottom: 10px;
 }
 
 .menu a {
@@ -52,7 +51,6 @@ p {
 .fotolobo {
   max-width: 100%;
   height: auto;
-  min-width: 200px; /* Para foto nunca diminuir abaixo de 250px */
   display: block;
 }
 
@@ -289,11 +287,23 @@ p {
   position: relative;
 }
 
+.cursos-itensivos2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  font-size: 1.125rem;
+  position: relative;
+}
+
 .cursos-itensivos h4 {
   grid-column: 1 / -1;
   color: #8f8f8f;
   text-transform: uppercase;
   font-size: 0.875rem;
+}
+
+#detalhe-idioma {
+  color: #8f8f8f;
 }
 
 .cursos-itensivos span {
@@ -412,7 +422,7 @@ p {
   .menu {
     flex-direction: column;
     align-content: center;
-    padding: 20px 0px;
+    padding: 20px 5px 70px 5px;
   }
 
   .menu-ul {
@@ -432,7 +442,7 @@ p {
 
   .info h1::before {
     background-size: 40%;
-    top: -8px;
+    top: -5px;
     left: 35px;
   }
 
@@ -449,7 +459,7 @@ p {
   }
 
   .info h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
 
   .info-segundaria {
@@ -457,9 +467,13 @@ p {
     gap: 20px;
   }
   .info-segundaria h2 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     color: #000;
     text-transform: capitalize;
+  }
+
+  #exp-h3 {
+    font-size: 1rem;
   }
   /* Segunda */
   .info-terciaria {
@@ -468,11 +482,20 @@ p {
   }
 
   .info-terciaria h2 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     text-transform: capitalize;
+    color: #7c7c7c;
+  }
+
+  #form-h3 {
+    font-size: 1rem;
   }
 
   .cursos-itensivos {
+    padding-left: 30px;
+  }
+
+  .cursos-itensivos2 {
     padding-left: 30px;
   }
 
@@ -490,8 +513,9 @@ p {
     gap: 20px;
   }
   .contato-h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     text-transform: capitalize;
+    color: #7c7c7c;
   }
 
   .contato-itens {
@@ -500,7 +524,7 @@ p {
   }
 
   #cont-id {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
   }
 
@@ -515,5 +539,35 @@ p {
   .info-quartenaria::after {
     background-size: 60%;
     top: -45px;
+  }
+}
+
+@media (max-width: 500px) {
+  .fotolobo {
+    display: none;
+  }
+
+  .info-primaria {
+    grid-template-columns: 1fr;
+    margin: 0px;
+    margin-bottom: 80px;
+  }
+
+  .info {
+    padding: 0px;
+  }
+
+  .bikcraft {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .espaco {
+    padding-top: 20px;
+  }
+  .info h1::before {
+    background-size: 40%;
+    top: -4px;
+    left: -15px;
   }
 }
