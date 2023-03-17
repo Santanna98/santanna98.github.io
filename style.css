@@ -1,0 +1,519 @@
+body {
+  font-family: "Fira Sans", Arial, Helvetica, sans-serif;
+  margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0px;
+}
+
+.menu-ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  gap: 2.81rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Define um espaço entre os elementos */
+  max-width: 1200px; /* Define um tamanho exato do meu menu */
+  padding: 40px 20px;
+  margin: 0 auto; /* Faz o browser calcular um tamanho automático dos lados, centralizando o conteudo */
+  margin-bottom: 10px;
+}
+
+.menu a {
+  font-size: 1.125rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.info-primaria {
+  display: grid;
+  margin: 0 auto;
+  padding: 0px 20px;
+  max-width: 1200px;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.main {
+  display: grid;
+}
+
+.fotolobo {
+  max-width: 100%;
+  height: auto;
+  min-width: 200px; /* Para foto nunca diminuir abaixo de 250px */
+  display: block;
+}
+
+.info {
+  padding-left: 100px;
+  display: grid;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.info h1 {
+  font-size: 4.5rem;
+}
+
+.info h1::before {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 130px;
+  z-index: -1; /* Deixar item atrás do conteúdo */
+  background-image: url(/img/detalhe.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -25px;
+  left: 57px;
+}
+
+@media (max-width: 1100px) {
+  /* Essa tipografia estava causando problema no responsivo */
+  .info h1 {
+    font-size: 3rem;
+  }
+
+  .info h1::before {
+    background-size: 70%;
+    top: -20px;
+    left: 70px;
+  }
+}
+
+.info p {
+  font-size: 1.5rem;
+  grid-row: 3;
+}
+
+/* Segundario */
+
+.info-segundaria {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 70px;
+  padding: 0px 20px 40px 20px;
+}
+
+.info-segundaria h2 {
+  font-size: 8rem;
+  color: #e9e9e9;
+  word-break: break-all; /* Permitir quebra de linha */
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+#exp-h3 {
+  color: #525252;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+#exp-h3 strong {
+  color: #000;
+}
+
+.experiencia {
+  display: grid;
+  gap: 15px;
+  border-radius: 4px;
+}
+
+.bikcraft {
+  background-color: #f5f5f5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: start;
+  border-radius: 4px;
+  padding: 20px;
+  gap: 10px 20px;
+  position: relative;
+}
+
+.bikcraft::before {
+  content: "";
+  display: block;
+  background-image: linear-gradient(
+    #b6f829,
+    #67dd0a
+  ); /* Definir um gradiente como detalhe */
+  height: 18px;
+  width: 4px;
+  position: absolute;
+  left: -4px;
+  bottom: 70%; /* Evita que o detalha saia da posição no layput responsivo */
+}
+
+.bikcraft p {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #525252;
+}
+
+.bikcraft h3 {
+  font-size: 1.125rem;
+}
+
+.lista-exp {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  gap: 10px;
+}
+
+.lista-exp li {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.info-terciaria {
+  background-color: #141414;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 70px;
+  padding: 100px 20px 0px 20px;
+}
+
+.info-terciaria h2 {
+  font-size: 7.5rem;
+  word-break: break-all;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.formacao {
+  display: grid;
+  gap: 60px;
+}
+
+.form-h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #525252;
+}
+
+.form-h3 strong {
+  color: #fff;
+}
+
+.main :nth-child() {
+  background-color: red;
+}
+
+.expandir {
+  /* Div dentro de div, para o background se expandir */
+  max-width: 100%;
+  background: #141414;
+  padding-bottom: 120px;
+}
+
+.cursos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cursos-itens {
+  background-color: #000;
+  padding: 15px;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Transformar o flex em coluna */
+  flex-basis: 0; /* Definir que o item se expanda no contender */
+  flex-grow: 1;
+}
+
+.cursos-itens p {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin-bottom: 10px;
+}
+
+.cursos-itens h3 {
+  font-size: 1.125rem;
+  color: #fff;
+  margin-bottom: 35px;
+}
+
+.cursos-itens h4 {
+  font-size: 1.125rem;
+  color: #a3a3a3;
+}
+
+.crescer {
+  flex: 1; /* forçar "analise" a crescer para preencher espaço entre Uninter */
+}
+
+.cursos-itens::after {
+  content: "";
+  display: block;
+  background-image: linear-gradient(#b6f829, #67dd0a);
+  height: 18px;
+  width: 4px;
+  position: absolute;
+  left: -4px;
+  top: 30px;
+}
+
+.cursos-itensivos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  font-size: 1.125rem;
+  position: relative;
+}
+
+.cursos-itensivos h4 {
+  grid-column: 1 / -1;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.cursos-itensivos span {
+  text-align: end;
+  color: #8f8f8f;
+}
+
+.cursos-itensivos p {
+  color: #fff;
+}
+
+#detalhe-curso::before {
+  content: "";
+  display: block;
+  background-image: url(/img/cursos.svg);
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -4px;
+  left: -36px;
+}
+
+#espanhol {
+  grid-column: 1;
+  grid-row: 3;
+  color: #8f8f8f;
+}
+
+#ingles {
+  grid-row: 2;
+  grid-column: 1;
+  color: #8f8f8f;
+}
+
+#ingles strong,
+#espanhol strong {
+  color: #fff;
+}
+
+#detalhe-idioma::before {
+  content: "";
+  display: block;
+  background-image: url(/img/idiomas.svg);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -4px;
+  left: -36px;
+}
+
+.expandir-2 {
+  background-color: #000;
+}
+
+.info-quartenaria {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 80px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+}
+
+.info-quartenaria::after {
+  content: "";
+  display: block;
+  background-image: url(/img/detalhe.svg);
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -60px;
+  left: 20px;
+}
+
+.contato-itens h1 {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  color: #ccc;
+}
+
+.contato li {
+  list-style: none;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  color: #fff;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.contato a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.contato-itens {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.contato-h1 {
+  font-size: 4rem;
+  color: #141414;
+  word-break: break-all;
+  text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+  /* Menu */
+  .menu {
+    flex-direction: column;
+    align-content: center;
+    padding: 20px 0px;
+  }
+
+  .menu-ul {
+    margin-top: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .menu-ul li {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+
+  /* Primeira */
+
+  .info h1::before {
+    background-size: 40%;
+    top: -8px;
+    left: 35px;
+  }
+
+  .info {
+    padding-left: 50px;
+  }
+
+  .info p {
+    font-size: 0.85rem;
+  }
+
+  .fotolobo {
+    min-width: 150px;
+  }
+
+  .info h1 {
+    font-size: 2rem;
+  }
+
+  .info-segundaria {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .info-segundaria h2 {
+    font-size: 3.5rem;
+    color: #000;
+    text-transform: capitalize;
+  }
+  /* Segunda */
+  .info-terciaria {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .info-terciaria h2 {
+    font-size: 3.5rem;
+    text-transform: capitalize;
+  }
+
+  .cursos-itensivos {
+    padding-left: 30px;
+  }
+
+  #detalhe-idioma::before {
+    left: -5px;
+  }
+
+  #detalhe-curso::before {
+    left: -5px;
+  }
+
+  /* Terceira */
+  .info-quartenaria {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .contato-h1 {
+    font-size: 3.5rem;
+    text-transform: capitalize;
+  }
+
+  .contato-itens {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #cont-id {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .contato {
+    padding: 0px;
+  }
+
+  .contato li {
+    font-size: 1.5rem;
+  }
+
+  .info-quartenaria::after {
+    background-size: 60%;
+    top: -45px;
+  }
+}
